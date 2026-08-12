@@ -18,6 +18,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile.prod
+      network: host
     env_file: .env.production
     environment:
       POSTGRES_HOST: db
@@ -30,6 +31,7 @@ services:
     build:
       context: ./site-vitrine
       dockerfile: Dockerfile.prod
+      network: host
       args:
         VITE_API_URL: ""
         VITE_INTRANET_URL: "http://${PUBLIC_IP}:8085"
@@ -43,6 +45,7 @@ services:
     build:
       context: ./intranet
       dockerfile: Dockerfile.prod
+      network: host
       args:
         VITE_API_URL: ""
         VITE_SITE_URL: "http://${PUBLIC_IP}:8084"
