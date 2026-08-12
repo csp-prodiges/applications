@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
+import { asset } from "../asset";
 import {
   IconArrowLeft,
   IconBook,
@@ -60,7 +61,7 @@ export default function Sidebar() {
   return (
     <aside className="flex h-screen w-72 shrink-0 flex-col border-r border-icc-purple/5 bg-white">
       <div className="flex items-center gap-3 px-6 py-6">
-        <img src="/csp-logo.svg" alt="CSP" className="h-12 w-12" />
+        <img src={asset("csp-logo.svg")} alt="CSP" className="h-12 w-12" />
         <div className="leading-tight">
           <div className="font-serif text-base font-semibold text-icc-purple">Cité Scolaire Prodiges</div>
           <div className="text-xs font-medium text-icc-slate">{roleLabel[user.role]}</div>

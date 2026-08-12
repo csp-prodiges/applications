@@ -1,5 +1,6 @@
 import Section from "../components/Section";
 import { IconBook, IconGraduationCap, IconSparkles, IconUsers } from "../components/Icons";
+import { asset } from "../asset";
 
 const dimensions = [
   { titre: "Formation", texte: "Impacter son environnement et briller dans sa génération.", icon: IconGraduationCap },
@@ -50,9 +51,9 @@ export default function Vision() {
       <div className="bg-icc-mist">
         <Section>
           <div className="grid gap-4 sm:grid-cols-3">
-            <img src="/photo-arts-1.jpg" alt="Atelier créatif à la Cité Scolaire Prodiges" className="aspect-square w-full rounded-2xl object-cover shadow-card" />
-            <img src="/photo-arts-2.jpg" alt="Création artistique en classe" className="aspect-square w-full rounded-2xl object-cover shadow-card" />
-            <img src="/photo-arts-3.jpg" alt="Élèves partageant un projet créatif" className="aspect-square w-full rounded-2xl object-cover shadow-card" />
+            <img src={asset("photo-arts-1.jpg")} alt="Atelier créatif à la Cité Scolaire Prodiges" className="aspect-square w-full rounded-2xl object-cover shadow-card" />
+            <img src={asset("photo-arts-2.jpg")} alt="Création artistique en classe" className="aspect-square w-full rounded-2xl object-cover shadow-card" />
+            <img src={asset("photo-arts-3.jpg")} alt="Élèves partageant un projet créatif" className="aspect-square w-full rounded-2xl object-cover shadow-card" />
           </div>
         </Section>
       </div>

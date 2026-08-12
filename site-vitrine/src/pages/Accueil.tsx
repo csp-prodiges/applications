@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Section from "../components/Section";
 import { IconBook, IconGraduationCap, IconSparkles, IconUsers } from "../components/Icons";
+import { asset } from "../asset";
 
 const dimensions = [
   { titre: "Formation", texte: "Impacter son environnement et briller dans sa génération.", icon: IconGraduationCap },
@@ -57,7 +58,7 @@ export default function Accueil() {
           <div className="relative mx-auto w-full max-w-md">
             <div className="absolute -inset-3 -z-10 rounded-[32px] bg-gradient-to-br from-icc-gold/30 to-icc-purplelight/30 blur-2xl" />
             <img
-              src="/photo-numerique.png"
+              src={asset("photo-numerique.png")}
               alt="Élèves de la Cité Scolaire Prodiges en atelier numérique"
               className="aspect-[4/3] w-full rounded-[28px] object-cover shadow-lift"
             />

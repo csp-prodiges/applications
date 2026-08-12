@@ -1,4 +1,5 @@
 import Section from "../components/Section";
+import { asset } from "../asset";
 
 export default function Ecole() {
   return (
@@ -42,18 +43,18 @@ export default function Ecole() {
           <div className="lg:sticky lg:top-24">
             <div className="grid grid-cols-2 gap-3">
               <img
-                src="/photo-atelier-creatif.jpg"
+                src={asset("photo-atelier-creatif.jpg")}
                 alt="Atelier créatif à la Cité Scolaire Prodiges"
                 className="aspect-[3/4] w-full rounded-2xl object-cover shadow-card"
               />
               <div className="grid gap-3">
                 <img
-                  src="/photo-musique.png"
+                  src={asset("photo-musique.png")}
                   alt="Ensemble musical d'élèves"
                   className="aspect-square w-full rounded-2xl object-cover shadow-card"
                 />
                 <img
-                  src="/photo-espace-jeux.jpg"
+                  src={asset("photo-espace-jeux.jpg")}
                   alt="Espace de jeux de la Cité Scolaire Prodiges"
                   className="aspect-square w-full rounded-2xl object-cover shadow-card"
                 />

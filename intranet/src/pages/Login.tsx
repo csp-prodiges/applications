@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
+import { asset } from "../asset";
 
 export default function Login() {
   const { user, login } = useAuth();
@@ -32,7 +33,7 @@ export default function Login() {
 
         <div className="relative flex items-center gap-3">
           <div className="rounded-full bg-white p-1.5 shadow-card">
-            <img src="/csp-logo.svg" alt="CSP" className="h-9 w-9" />
+            <img src={asset("csp-logo.svg")} alt="CSP" className="h-9 w-9" />
           </div>
           <div className="font-serif text-lg font-semibold">Cité Scolaire Prodiges</div>
         </div>
@@ -49,14 +50,14 @@ export default function Login() {
         </div>
 
         <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-3xl shadow-lift">
-          <img src="/photo-musique.png" alt="Vie de la Cité Scolaire Prodiges" className="aspect-[4/3] w-full object-cover" />
+          <img src={asset("photo-musique.png")} alt="Vie de la Cité Scolaire Prodiges" className="aspect-[4/3] w-full object-cover" />
         </div>
       </div>
 
       <div className="flex w-full items-center justify-center bg-icc-mist px-4 py-12 lg:w-1/2">
         <div className="w-full max-w-sm">
           <div className="mb-8 flex flex-col items-center lg:hidden">
-            <img src="/csp-logo.svg" alt="CSP" className="h-16 w-16" />
+            <img src={asset("csp-logo.svg")} alt="CSP" className="h-16 w-16" />
           </div>
 
           <h2 className="font-serif text-2xl font-semibold text-icc-ink">Connexion</h2>

@@ -1,5 +1,6 @@
 import Section from "../components/Section";
 import { IconBook, IconGraduationCap, IconSparkles, IconUsers } from "../components/Icons";
+import { asset } from "../asset";
 
 const sections = [
   { titre: "Les fondamentaux", texte: "Lire, écrire, compter, raisonner.", icon: IconBook },
@@ -47,9 +48,9 @@ export default function Programme() {
 
       <Section className="pt-0">
         <div className="grid gap-5 sm:grid-cols-3">
-          <img src="/photo-numerique-1.jpg" alt="Élève en atelier numérique" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card" />
-          <img src="/photo-numerique-2.jpg" alt="Élève en atelier robotique" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card" />
-          <img src="/photo-salle-classe.jpg" alt="Salle de classe de la Cité Scolaire Prodiges" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card" />
+          <img src={asset("photo-numerique-1.jpg")} alt="Élève en atelier numérique" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card" />
+          <img src={asset("photo-numerique-2.jpg")} alt="Élève en atelier robotique" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card" />
+          <img src={asset("photo-salle-classe.jpg")} alt="Salle de classe de la Cité Scolaire Prodiges" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-card" />
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-icc-slate">
           Numérique & IA, robotique, langues, arts : nos élèves explorent chaque semaine de

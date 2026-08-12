@@ -27,18 +27,22 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  # Servi derrière le nginx existant du VPS (déjà sur 80/443) via des chemins
+  # /csp/ et /csp-intranet/ — pas de nouveau port public à ouvrir côté OVH.
+  # N'écoute que sur 127.0.0.1, comme les autres apps déjà déployées sur ce VPS.
   site-vitrine:
     build:
       context: ./site-vitrine
       dockerfile: Dockerfile.prod
       network: host
       args:
-        VITE_API_URL: ""
-        VITE_INTRANET_URL: "http://${PUBLIC_IP}:8085"
+        VITE_BASE_PATH: "/csp/"
+        VITE_API_URL: "/csp"
+        VITE_INTRANET_URL: "http://${PUBLIC_IP}/csp-intranet/"
     depends_on:
       - backend
     ports:
-      - "8084:80"
+      - "127.0.0.1:8084:80"
     restart: unless-stopped
 
   intranet:
@@ -47,12 +51,13 @@ services:
       dockerfile: Dockerfile.prod
       network: host
       args:
-        VITE_API_URL: ""
-        VITE_SITE_URL: "http://${PUBLIC_IP}:8084"
+        VITE_BASE_PATH: "/csp-intranet/"
+        VITE_API_URL: "/csp-intranet"
+        VITE_SITE_URL: "http://${PUBLIC_IP}/csp/"
     depends_on:
       - backend
     ports:
-      - "8085:80"
+      - "127.0.0.1:8085:80"
     restart: unless-stopped
 
 volumes:

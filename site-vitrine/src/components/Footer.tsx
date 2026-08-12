@@ -1,3 +1,5 @@
+import { asset } from "../asset";
+
 export default function Footer() {
   return (
     <footer className="mt-24 bg-icc-purpledark text-purple-100">
@@ -6,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-white p-1.5 shadow-card">
-                <img src="/csp-logo.svg" alt="Cité Scolaire Prodiges" className="h-9 w-9" />
+                <img src={asset("csp-logo.svg")} alt="Cité Scolaire Prodiges" className="h-9 w-9" />
               </div>
               <span className="font-serif text-lg font-semibold text-white">Cité Scolaire Prodiges</span>
             </div>

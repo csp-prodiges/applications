@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { asset } from "../asset";
 
 const INTRANET_URL = import.meta.env.VITE_INTRANET_URL ?? "http://localhost:5176";
 
@@ -19,7 +20,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 border-b border-icc-purple/5 bg-white/90 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
         <NavLink to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src="/csp-logo.svg" alt="Cité Scolaire Prodiges" className="h-12 w-12" />
+          <img src={asset("csp-logo.svg")} alt="Cité Scolaire Prodiges" className="h-12 w-12" />
           <div className="leading-tight">
             <div className="font-serif text-lg font-semibold text-icc-purple">Cité Scolaire Prodiges</div>
             <div className="text-[11px] font-medium uppercase tracking-wider text-icc-slate">Un projet ICC</div>
