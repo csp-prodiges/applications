@@ -37,7 +37,7 @@ services:
       network: host
       args:
         VITE_API_URL: ""
-        VITE_INTRANET_URL: "https://${INTRANET_DOMAIN}"
+        VITE_INTRANET_URL: "http://${INTRANET_DOMAIN}"
     depends_on:
       - backend
     ports:
@@ -51,7 +51,7 @@ services:
       network: host
       args:
         VITE_API_URL: ""
-        VITE_SITE_URL: "https://${SITE_DOMAIN}"
+        VITE_SITE_URL: "http://${SITE_DOMAIN}"
     depends_on:
       - backend
     ports:
