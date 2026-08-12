@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <defs>
+    <path id="ribbonArc" d="M59.7,196.2 A98,98 0 0 0 220.3,196.2"/>
+  </defs>
+
+  <circle cx="140" cy="140" r="115" stroke="#3D1856" stroke-width="3"/>
+
+  <!-- Laurel left -->
+  <g fill="#3D1856">
+    <path d="M62 190 Q42 148 64 78" stroke="#3D1856" stroke-width="2.5" fill="none"/>
+    <ellipse cx="57" cy="178" rx="6" ry="12" transform="rotate(-15 57 178)"/>
+    <ellipse cx="49" cy="159" rx="6" ry="12" transform="rotate(-35 49 159)"/>
+    <ellipse cx="45" cy="138" rx="5.5" ry="11.5" transform="rotate(-55 45 138)"/>
+    <ellipse cx="48" cy="116" rx="5.5" ry="11" transform="rotate(-72 48 116)"/>
+    <ellipse cx="57" cy="97" rx="5" ry="10.5" transform="rotate(-86 57 97)"/>
+  </g>
+  <!-- Laurel right -->
+  <g fill="#3D1856">
+    <path d="M218 190 Q238 148 216 78" stroke="#3D1856" stroke-width="2.5" fill="none"/>
+    <ellipse cx="223" cy="178" rx="6" ry="12" transform="rotate(15 223 178)"/>
+    <ellipse cx="231" cy="159" rx="6" ry="12" transform="rotate(35 231 159)"/>
+    <ellipse cx="235" cy="138" rx="5.5" ry="11.5" transform="rotate(55 235 138)"/>
+    <ellipse cx="232" cy="116" rx="5.5" ry="11" transform="rotate(72 232 116)"/>
+    <ellipse cx="223" cy="97" rx="5" ry="10.5" transform="rotate(86 223 97)"/>
+  </g>
+
+  <!-- Rainbow flourish -->
+  <path d="M140 88 C132 68 121 54 106 42" stroke="#E63946" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M140 88 C136 64 133 46 126 28" stroke="#2B7FD6" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M140 88 C144 64 149 44 158 26" stroke="#3FA64B" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M140 88 C149 66 163 50 181 40" stroke="#F2B705" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+  <!-- CSP monogram -->
+  <text x="140" y="115" text-anchor="middle" font-family="'Fraunces','Georgia',serif" font-weight="700" font-size="34" fill="#3D1856" letter-spacing="1">CSP</text>
+
+  <!-- Open book -->
+  <path d="M140 130 C130 124 114 121 101 123 L101 137 C114 135 130 138 140 145 Z" fill="#EDE3F5" stroke="#3D1856" stroke-width="2"/>
+  <path d="M140 130 C150 124 166 121 179 123 L179 137 C166 135 150 138 140 145 Z" fill="#EDE3F5" stroke="#3D1856" stroke-width="2"/>
+  <path d="M140 130 L140 145" stroke="#3D1856" stroke-width="1.5"/>
+
+  <!-- Wordmark -->
+  <text x="140" y="163" text-anchor="middle" font-family="'Inter','Segoe UI',sans-serif" font-weight="600" font-size="10" letter-spacing="3" fill="#3D1856">CITÉ SCOLAIRE</text>
+  <text x="140" y="188" text-anchor="middle" font-family="'Fraunces','Georgia',serif" font-weight="700" font-size="27" fill="#3D1856">PRODIGES</text>
+
+  <path d="M104 196 L128 196" stroke="#3D1856" stroke-width="1"/>
+  <rect x="137" y="193" width="6" height="6" fill="#F2B705" transform="rotate(45 140 196)"/>
+  <path d="M152 196 L176 196" stroke="#3D1856" stroke-width="1"/>
+
+  <text x="140" y="205" text-anchor="middle" font-family="'Inter','Segoe UI',sans-serif" font-size="6" letter-spacing="0.8" fill="#5B3A7A">INSTRUIRE AUJOURD'HUI</text>
+  <text x="140" y="213" text-anchor="middle" font-family="'Inter','Segoe UI',sans-serif" font-size="6" letter-spacing="0.8" fill="#5B3A7A">POUR CONSTRUIRE DEMAIN</text>
+
+  <!-- Ribbon band -->
+  <path d="M220.3,196.2 A98,98 0 0 1 59.7,196.2" stroke="#3D1856" stroke-width="26" fill="none"/>
+  <text font-family="'Inter','Segoe UI',sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.5" fill="#FFFFFF">
+    <textPath href="#ribbonArc" startOffset="50%" text-anchor="middle">FORMATION • EXCELLENCE • VALEURS</textPath>
+  </text>
+
+  <!-- Cross emblem -->
+  <g transform="translate(140,150)">
+    <rect x="-2" y="86" width="4" height="16" fill="#F2B705"/>
+    <rect x="-7" y="91" width="14" height="4" fill="#F2B705"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    env_file: .env
+    environment:
+      POSTGRES_HOST: db
+      WATCHFILES_FORCE_POLLING: "true"
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./backend:/app
+
+  site-vitrine:
+    build: ./site-vitrine
+    env_file: .env
+    depends_on:
+      - backend
+    ports:
+      - "5175:5173"
+    volumes:
+      - ./site-vitrine:/app
+      - /app/node_modules
+
+  intranet:
+    build: ./intranet
+    env_file: .env
+    depends_on:
+      - backend
+    ports:
+      - "5176:5173"
+    volumes:
+      - ./intranet:/app
+      - /app/node_modules
+
+volumes:
+  pgdata:

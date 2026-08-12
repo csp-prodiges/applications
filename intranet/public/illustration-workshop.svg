@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" fill="none">
+  <rect x="0" y="0" width="520" height="420" rx="28" fill="#F7F4FB"/>
+
+  <!-- shelf with books -->
+  <rect x="30" y="60" width="150" height="10" fill="#3D1856" opacity="0.15"/>
+  <rect x="40" y="24" width="16" height="36" fill="#E63946"/>
+  <rect x="58" y="18" width="16" height="42" fill="#D9A62E"/>
+  <rect x="76" y="28" width="16" height="32" fill="#2B7FD6"/>
+  <rect x="94" y="14" width="16" height="46" fill="#3FA64B"/>
+  <circle cx="150" cy="38" r="16" fill="none" stroke="#3D1856" stroke-width="2.5"/>
+  <path d="M144 38 h12 M150 32 v12" stroke="#3D1856" stroke-width="2"/>
+
+  <!-- round table -->
+  <ellipse cx="260" cy="300" rx="190" ry="46" fill="#EDE3F5"/>
+  <ellipse cx="260" cy="292" rx="190" ry="46" fill="#FFFFFF" stroke="#3D1856" stroke-width="2"/>
+
+  <!-- paper + paint on table -->
+  <rect x="205" y="272" width="60" height="42" rx="4" fill="#FBF8F2" stroke="#3D1856" stroke-width="1.5" transform="rotate(-6 235 293)"/>
+  <path d="M215 285 q10 -10 20 0 t20 0" stroke="#2B7FD6" stroke-width="2" fill="none" transform="rotate(-6 235 293)"/>
+  <g transform="translate(330,286)">
+    <ellipse cx="0" cy="10" rx="26" ry="14" fill="#FFFFFF" stroke="#3D1856" stroke-width="1.5"/>
+    <circle cx="-12" cy="6" r="4.5" fill="#E63946"/>
+    <circle cx="0" cy="3" r="4.5" fill="#D9A62E"/>
+    <circle cx="12" cy="6" r="4.5" fill="#2B7FD6"/>
+    <circle cx="4" cy="13" r="4.5" fill="#3FA64B"/>
+  </g>
+
+  <!-- three kids seated around table -->
+  <g transform="translate(150,275)">
+    <path d="M-24 62 C-24 30 -14 8 0 8 C14 8 24 30 24 62 L24 78 L-24 78 Z" fill="#E63946"/>
+    <circle cx="0" cy="-8" r="18" fill="#3D1856"/>
+    <path d="M-18 40 L-34 20" stroke="#E63946" stroke-width="9" stroke-linecap="round"/>
+    <path d="M18 40 L30 20" stroke="#E63946" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(260,260)">
+    <path d="M-24 66 C-24 32 -14 8 0 8 C14 8 24 32 24 66 L24 82 L-24 82 Z" fill="#3FA64B"/>
+    <circle cx="0" cy="-10" r="19" fill="#3D1856"/>
+    <path d="M-18 44 L-32 62" stroke="#3FA64B" stroke-width="9" stroke-linecap="round"/>
+    <path d="M18 44 L32 62" stroke="#3FA64B" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(368,275)">
+    <path d="M-24 62 C-24 30 -14 8 0 8 C14 8 24 30 24 62 L24 78 L-24 78 Z" fill="#2B7FD6"/>
+    <circle cx="0" cy="-8" r="18" fill="#3D1856"/>
+    <path d="M-18 40 L-30 20" stroke="#2B7FD6" stroke-width="9" stroke-linecap="round"/>
+    <path d="M18 40 L34 20" stroke="#2B7FD6" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- floating creative accents -->
+  <g transform="translate(90,150) rotate(-12)">
+    <path d="M0 0 L48 0 L40 14 L-8 14 Z" fill="#D9A62E"/>
+    <rect x="-8" y="12" width="8" height="3" fill="#3D1856"/>
+  </g>
+  <path d="M420 130 l4 9 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill="#F2C94C"/>
+  <circle cx="450" cy="190" r="6" fill="#E63946"/>
+  <circle cx="60" cy="210" r="5" fill="#2B7FD6"/>
+  <path d="M400 90 q20 -14 38 0" stroke="#3FA64B" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

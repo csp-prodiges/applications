@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1F1233;
+}
+
+::selection {
+  background: #EDE3F5;
+  color: #3D1856;
+}
