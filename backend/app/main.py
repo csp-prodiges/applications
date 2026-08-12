@@ -20,14 +20,17 @@ from app.routers import (
     public,
     ressources,
 )
-from app.seed import seed_database
+from app.seed import bootstrap_admin, seed_database
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await init_db()
     async with async_session() as session:
-        await seed_database(session)
+        if settings.enable_demo_seed:
+            await seed_database(session)
+        else:
+            await bootstrap_admin(session)
     yield
 
 

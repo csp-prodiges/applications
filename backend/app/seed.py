@@ -21,11 +21,37 @@ from app.models import (
     Role,
     Utilisateur,
 )
+from app.config import settings
 from app.models.admission import StatutAdmission
 from app.models.cantine import TypeTransaction
 from app.models.commande import StatutCommande, TypeCommande
 from app.models.evenement import TypeEvenement
 from app.security import hash_password
+
+
+async def bootstrap_admin(session: AsyncSession) -> None:
+    """Crée un compte admin à partir de ADMIN_EMAIL/ADMIN_PASSWORD si absent.
+
+    Indépendant du seed de démo : c'est le seul moyen de créer le premier
+    compte admin en production quand ENABLE_DEMO_SEED=false.
+    """
+    if not settings.admin_email or not settings.admin_password:
+        return
+    existant = await session.scalar(
+        select(Utilisateur).where(Utilisateur.email == settings.admin_email)
+    )
+    if existant is not None:
+        return
+    session.add(
+        Utilisateur(
+            email=settings.admin_email,
+            password_hash=hash_password(settings.admin_password),
+            role=Role.admin,
+            nom="Administration",
+            prenom="CSP",
+        )
+    )
+    await session.commit()
 
 
 async def seed_database(session: AsyncSession) -> None:

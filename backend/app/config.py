@@ -16,6 +16,10 @@ class Settings(BaseSettings):
     refresh_token_expire_days: int = 7
 
     cors_origins: str = "http://localhost:5175,http://localhost:5176"
+    enable_demo_seed: bool = True
+
+    admin_email: str | None = None
+    admin_password: str | None = None
 
     @property
     def database_url(self) -> str:

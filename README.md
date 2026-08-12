@@ -36,6 +36,42 @@ messagerie.
 | Enseignant (classe CM1) | prof.dupont@cite-scolaire-prodiges.org | Prof@CSP2026! |
 | Admin | admin@cite-scolaire-prodiges.org | Admin@CSP2026! |
 
+## Déploiement en production (VPS OVH)
+
+Fichiers dédiés : `docker-compose.prod.yml`, `backend/Dockerfile.prod`,
+`site-vitrine/Dockerfile.prod` + `nginx.conf`, `intranet/Dockerfile.prod` + `nginx.conf`.
+Contrairement au setup de dev, `db` et `backend` ne sont **pas** exposés sur des ports
+publics — seuls `site-vitrine` (8084) et `intranet` (8085) le sont ; chacun sert ses
+fichiers statiques compilés via nginx et proxy `/api/*` vers `backend` en interne.
+
+```bash
+# Sur le VPS
+git clone https://github.com/csp-prodiges/applications.git csp-prodiges
+cd csp-prodiges
+
+cp .env.production.example .env.production
+nano .env.production   # POSTGRES_PASSWORD, JWT_SECRET, ADMIN_EMAIL/ADMIN_PASSWORD,
+                        # CORS_ORIGINS et PUBLIC_IP (déjà pré-remplis avec 79.137.54.238)
+                        # Générer des secrets forts : openssl rand -base64 48
+
+docker compose -f docker-compose.prod.yml --env-file .env.production up -d --build
+```
+
+- Site vitrine : http://79.137.54.238:8084
+- Intranet : http://79.137.54.238:8085
+- `ENABLE_DEMO_SEED=false` en prod (par défaut dans `.env.production.example`) : les
+  comptes de démo (mots de passe publiés sur GitHub) ne sont **jamais** créés. Le seul
+  compte créé au démarrage est celui défini par `ADMIN_EMAIL` / `ADMIN_PASSWORD` —
+  changez son mot de passe depuis l'intranet dès la première connexion, puis créez les
+  vrais comptes enseignants/parents depuis Utilisateurs.
+- Pour mettre à jour après un nouveau `git push` :
+  `git pull && docker compose -f docker-compose.prod.yml --env-file .env.production up -d --build`
+- Firewall OVH : n'ouvrir que 22 (SSH), 8084 et 8085 — pas besoin d'exposer le port
+  Postgres ni celui du backend.
+- Étape suivante recommandée (non faite ici) : domaine + reverse-proxy Traefik/Nginx
+  devant les deux ports avec certificats TLS (Let's Encrypt), pour ne plus exposer
+  l'app en HTTP brut sur une IP.
+
 ## Structure
 
 ```
