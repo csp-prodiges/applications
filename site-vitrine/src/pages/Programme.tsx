@@ -5,8 +5,8 @@ import { asset } from "../asset";
 const sections = [
   { titre: "Les fondamentaux", texte: "Lire, écrire, compter, raisonner.", icon: IconBook },
   { titre: "Étude biblique", texte: "Adaptée selon l'âge de l'enfant.", icon: IconSparkles },
-  { titre: "Section langues", texte: "Bilinguisme et langues en option.", icon: IconUsers },
-  { titre: "Section artistique", texte: "Musique, expression, création.", icon: IconSparkles },
+  { titre: "Section langues", texte: "Anglais obligatoire pour tous, langues supplémentaires en option.", icon: IconUsers },
+  { titre: "Section artistique", texte: "Musique, expression, création — instruments en option.", icon: IconSparkles },
   { titre: "Section sport", texte: "Pratique, endurance, esprit d'équipe.", icon: IconGraduationCap },
 ];
 
@@ -16,6 +16,19 @@ const tarifs = [
   { poste: "Uniforme", tarif: "30 € / an" },
   { poste: "Périscolaire", tarif: "5 € / heure" },
   { poste: "Livres pédagogiques", tarif: "30 € / matière" },
+];
+
+const optionsLangues = [
+  { poste: "Mandarin", tarif: "40 € / mois" },
+  { poste: "Russe", tarif: "40 € / mois" },
+  { poste: "Arabe", tarif: "40 € / mois" },
+  { poste: "Swahili", tarif: "40 € / mois" },
+];
+
+const optionsInstruments = [
+  { poste: "1er instrument", tarif: "40 € / mois" },
+  { poste: "2e instrument", tarif: "40 € / mois" },
+  { poste: "3e instrument et suivants", tarif: "40 € / mois chacun" },
 ];
 
 export default function Programme() {
@@ -91,6 +104,58 @@ export default function Programme() {
           </div>
         </Section>
       </div>
+
+      <Section>
+        <div className="rounded-2xl bg-icc-lilac px-6 py-4 text-center">
+          <p className="text-sm font-medium text-icc-purple">
+            L'anglais est enseigné à tous nos élèves, sans exception. Les langues et
+            instruments ci-dessous sont proposés en option, en plus du tronc commun.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-icc-gold">Section langues</p>
+            <h2 className="mt-2 font-serif text-2xl font-semibold text-icc-ink">Langues en option</h2>
+            <p className="mt-2 text-sm text-icc-slate">
+              Un enfant peut suivre une ou plusieurs langues en option, en plus de l'anglais.
+            </p>
+            <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-card">
+              <table className="w-full text-left">
+                <tbody>
+                  {optionsLangues.map((o, i) => (
+                    <tr key={o.poste} className={i !== optionsLangues.length - 1 ? "border-b border-icc-purple/5" : ""}>
+                      <td className="px-6 py-3.5 text-icc-slate">{o.poste}</td>
+                      <td className="px-6 py-3.5 text-right font-semibold text-icc-ink">{o.tarif}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-icc-gold">Section artistique</p>
+            <h2 className="mt-2 font-serif text-2xl font-semibold text-icc-ink">Cours d'instrument en option</h2>
+            <p className="mt-2 text-sm text-icc-slate">
+              Piano, guitare, violon, percussions… au choix de l'enfant, avec possibilité
+              d'apprendre plusieurs instruments.
+            </p>
+            <div className="mt-6 overflow-hidden rounded-2xl bg-white shadow-card">
+              <table className="w-full text-left">
+                <tbody>
+                  {optionsInstruments.map((o, i) => (
+                    <tr key={o.poste} className={i !== optionsInstruments.length - 1 ? "border-b border-icc-purple/5" : ""}>
+                      <td className="px-6 py-3.5 text-icc-slate">{o.poste}</td>
+                      <td className="px-6 py-3.5 text-right font-semibold text-icc-ink">{o.tarif}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </Section>
     </div>
   );
 }
